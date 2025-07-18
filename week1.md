@@ -52,6 +52,16 @@
 
 <summary>조사 내용</summary>
 
+- [모델에 맞는 프롬프트 엔지니어링 기법 가이드 모음](https://turingpost.co.kr/p/prompt-engineering-12)
+- [자신이 작성하는 프롬프트가 < 더 나은 프롬프트 작성 전략 > 에 해당하는지 체크한 다음 개선하기](https://cloud.google.com/discover/what-is-prompt-engineering?hl=ko#strategies-for-writing-better-prompts)
+- [좋은 프롬프트와 그렇지 않은 프롬프트를 비교하고 실험하기 - 비슷한 내용이지만 다른 형식의 프롬프트를 계속 돌리면서 비교](https://wikidocs.net/book/17625)
+- [자주 사용되는 인기 프롬프트를 찾고 적용하기 Ex) Stable Diffusion](https://mpost.io/best-100-stable-diffusion-prompts-the-most-beautiful-ai-text-to-image-prompts/)
+- [Gemini 앱 고객센터 - 맞춤 Gems를 만드는 방법](https://support.google.com/gemini/answer/15235603?hl=ko&ref_topic=15236104&sjid=16859957180883029833-NC#zippy=%2C%EB%B8%8C%EB%A0%88%EC%9D%B8%EC%8A%A4%ED%86%A0%EB%B0%8D-%EB%8F%84%EA%B5%AC%2C%EC%BD%94%EB%94%A9-%ED%8C%8C%ED%8A%B8%EB%84%88%2C%EC%9E%91%EB%AC%B8-%ED%8E%B8%EC%A7%91%EA%B8%B0)
+- [openai 프롬프트에 대한 가이드 1](https://help.openai.com/en/articles/10032626-prompt-engineering-best-practices-for-chatgpt)
+- [openai 프롬프트에 대한 가이드 2](https://platform.openai.com/docs/guides/text?api-mode=chat&prompt-example=code#prompt-engineering)
+- [프롬프트 프레임 워크 관련 링크](https://spartacodingclub.kr/blog/chatgpt-prompt-templates)
+ - [여러 샘플들](https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery?hl=ko)
+
 </details>
 
 <details>
