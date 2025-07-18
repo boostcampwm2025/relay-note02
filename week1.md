@@ -51,21 +51,8 @@
 <details>
 
 <summary>조사 내용</summary>
- - 프롬프트 만들기
-  - xml, 마크다운을 사용하면 모델에게 알려주는 프롬프트를 정리할 수 있다.
-  - Identity: 모델이 어떤 방식으로 답했으면 좋겠는지 입력하는 부분 (조사를 도와주는 선생님, 멘토...)
-  - Context: 어떤 식의 입력이 들어올 수 있는지 설명하기
-  - Instruction: 모델이 어떤 식으로 대답했으면 좋겠는지 설명
-  - Constraints: 모델에게 제약
-  
-</details>
-
-<details>
-
-<summary>조사 내용</summary>
 
 </details>
-
 
 <details>
 
