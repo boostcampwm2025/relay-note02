@@ -53,9 +53,9 @@
 <summary>조사 내용</summary>
 
 - [모델에 맞는 프롬프트 엔지니어링 기법 가이드 모음](https://turingpost.co.kr/p/prompt-engineering-12)
-- [자신이 작성하는 프롬프트가 < 더 나은 프롬프트 작성 전략 > 에 해당하는지 체크한 다음 개선하기](https://cloud.google.com/discover/what-is-prompt-engineering?hl=ko#strategies-for-writing-better-prompts)
-- [좋은 프롬프트와 그렇지 않은 프롬프트를 비교하고 실험하기 - 비슷한 내용이지만 다른 형식의 프롬프트를 계속 돌리면서 비교](https://wikidocs.net/book/17625)
-- [자주 사용되는 인기 프롬프트를 찾고 적용하기 Ex) Stable Diffusion](https://mpost.io/best-100-stable-diffusion-prompts-the-most-beautiful-ai-text-to-image-prompts/)
+- [더 나은 프롬프트 작성 전략](https://cloud.google.com/discover/what-is-prompt-engineering?hl=ko#strategies-for-writing-better-prompts)
+- [코딩 없이 배우는 프롬프트 엔지니어링: 누구나 할 수 있는 생성형 AI 활용법](https://wikidocs.net/book/17625)
+- [자주 사용되는 인기 프롬프트를 찾고 적용하기 - Stable Diffusion](https://mpost.io/best-100-stable-diffusion-prompts-the-most-beautiful-ai-text-to-image-prompts/)
 - [Gemini 앱 고객센터 - 맞춤 Gems를 만드는 방법](https://support.google.com/gemini/answer/15235603?hl=ko&ref_topic=15236104&sjid=16859957180883029833-NC#zippy=%2C%EB%B8%8C%EB%A0%88%EC%9D%B8%EC%8A%A4%ED%86%A0%EB%B0%8D-%EB%8F%84%EA%B5%AC%2C%EC%BD%94%EB%94%A9-%ED%8C%8C%ED%8A%B8%EB%84%88%2C%EC%9E%91%EB%AC%B8-%ED%8E%B8%EC%A7%91%EA%B8%B0)
 - [openai 프롬프트에 대한 가이드 1](https://help.openai.com/en/articles/10032626-prompt-engineering-best-practices-for-chatgpt)
 - [openai 프롬프트에 대한 가이드 2](https://platform.openai.com/docs/guides/text?api-mode=chat&prompt-example=code#prompt-engineering)
@@ -69,21 +69,22 @@
 <summary>퀘스트</summary>
 
 ## 1. 프롬프트 베스트 프랙티스를 참고하여 학습 로드맵을 생성해주는 AI 프롬프트 만들기
-- 학습에 필요한 자료들을 추천하는데 AI 활용해보기
+- 학습에 필요한 자료들을 추천하는데 AI 활용해보기.
 - 배경: 미션을 받았을때 뭘 모르는지 모르는 상태였기 때문에 방향을 학습에 방향성을 잡아주는 도움이 필요하다고 느꼈다.
-- 목표/기준: 한 번정도 ai의 답변 바탕으로 학습을 진행하고 배운부분을 학습정리에 작성한다.
+- 목표/기준: 한 번정도 AI의 답변 바탕으로 학습을 진행하고 배운부분을 학습정리에 작성한다.
 
 ## 2. 리드미 등의 작성한 문서 파일 다듬기에 AI 활용
-- 배경: 피어 피드백, 컴파일링을 진행하면서 다른 팀원들에게 문서를 읽기 쉽게 고민해봤던 경험이 있었음
-- 목표/기준: 작성한 리드미 파일과 ai가 만들어준 파일 그리고 수정한 리드 파일을 비교해서 보여줘야 한다.
+- 배경: 피어 피드백, 컴파일링을 진행하면서 다른 팀원들에게 문서를 읽기 쉽게 고민해봤던 경험이 있었다.
+- 목표/기준: 작성한 리드미 파일과 AI가 만들어준 파일 그리고 수정한 리드 파일을 비교해서 보여줘야 한다.
 
 ## 3. 작성된 코드의 테스트 케이스 작성에 AI 활용
-- 배경: 다른 캠퍼분이 피어 피드백을 진행할때 테스트 케이스를 ai를 도움을 받아서 경험과 시간이 부족해 테스트 케이스를 작성하지 못한 경험이 있다.
-- 찾지 못한 테스트 케이스를 도움 받아보자!
-- 목표/기준: 
+- 배경: 시간이 부족하여 테스트 케이스를 자세하게 작성하지 않고 넘어간 경우가 많다. 
+- 목표/기준
+ - AI 도움을 받아 시간을 단축하면서 자세한 테스트 케이스들로 다양한 테스트를 진행한다.
+ - 자기가 작성한 테스트 케이스와 AI가 만들어준 테스트 케이스를 비교하고 어떤 케이스들이 추가 되었는지 확인해본다.
 
 ## 4. 건강을 고려해서 간단한 운동/식사를 추천해주는 프롬프트 만들기
 - 배경: 챌린지를 하며 건강 (잠, 컨디션, 생활패턴...) 이 좀 걱정된다. "하나만 더"룰 하다가 잠을 좀 잃는 것 같다.
-- 목표/기준: 식사나 운동이나 사진 찍어서 ai가 추천해준거랑 캡쳐해서 슬랙에 공유하기 ㅋㅋ
+- 목표/기준: 식사나 운동이나 사진 찍어서 AI가 추천해준거랑 캡쳐해서 슬랙에 공유하기📸 (+ 본인이 할 수 있는 범위를 잘 정해보자! 화이팅!)
 
 </details>
