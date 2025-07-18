@@ -48,9 +48,8 @@
 
 </details>
 
-<summary>조사 내용</summary>
-- 
 <details>
 
+<summary>조사 내용</summary>
  
 </details>
