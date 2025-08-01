@@ -79,16 +79,16 @@ AI와 피어세션에서 내가 작성한 리드미/학습 내용을 AI에게 �
 
 </details>
 <details>
-<summary><strong>@000 : 퀘스트 내용</strong></summary>
+<summary><strong>S039 : 3. AI에게 캠퍼코드 랜덤으로 2개 받기, 그리고 오늘 미션에 대해 설명하고 질문 리스트 받은 후 디엠 방 만들어서 토론하기</strong></summary>
 
 </details>
 <details>
-<summary><strong>@000 : 퀘스트 내용</strong></summary>
+<summary><strong>J217 : 4. AI에게 리드미 보여주고 피어 피드백 시간에 논의해볼 질문 2개 받기</strong></summary>
 
 </details>
 <details>
-<summary><strong>@000 : 퀘스트 내용</strong></summary>
+<summary><strong>J234 : 1. AI 재판관 - 짝과 설계 의견이 갈릴 때 AI에게 판단 요청하기</strong></summary>
 
 </details>
 <details>
-<summary><strong>@000 : 퀘스트 내용</strong></summary>
+<summary><strong>J298 : 2. AI에게 내 리드미/학습 내용을 기반으로 한 질문 받아서 대화하기</strong></summary>
