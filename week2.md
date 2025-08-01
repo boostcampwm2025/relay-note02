@@ -70,6 +70,174 @@ Week1의 2번 미션을 보고 어떻게 README파일을 작성하는 게 가독
 
 ### **J016\_고윤성**
 
+- 선택한 퀘스트 : 1번 프롬프트 베스트 프랙티스를 참고하여 학습 로드맵을 생성해주는 AI 프롬프트 만들기
+- 선택 이유 : AI를 통해 추천받는 자료와 내가 직접 공부해가면서 딥다이브해가면서 찾는 자료와 어떤 질의 차이가 있는지 확인하고 AI를 통해 더 빠르게 내가 원하는 자료를 찾을 수 있는지 궁금해서 퀘스트를 선택하게 되었다.
+
+- 미션 Prompt
+```
+git 내부구조에 대해 학습하고 있어. 특히 object에 대해 학습에 집중하고 있는데 학습에 도움되는 자료들을 추천하는데 블로그같은 사람들의 학습내용이 아닌 공식자료나 전공자료 위주로 추천해줘
+```
+- 대답
+```
+1️⃣ 공식 문서 (최우선 학습 자료)
+	1.	Git Book – Pro Git (공식)
+	•	Chapter 10: Git Internals
+	•	Git object 구조, SHA-1/2 해시 기반 저장 방식, commit/tree/blob/tag 관계도 포함.
+	•	웹: https://git-scm.com/book/en/v2/Git-Internals-Plumbing-and-Porcelain
+	•	PDF/ePub 가능, Git 프로젝트 공식 가이드.
+	2.	Git 공식 문서 – githash-object / git cat-file
+	•	object 생성과 조회를 직접 실습하며 이해 가능.
+	•	https://git-scm.com/docs/git-hash-object
+	•	https://git-scm.com/docs/git-cat-file
+	•	object 구조를 CLI로 실습하며 내부를 확인할 수 있어 추천.
+	3.	Git Source Code
+	•	Git object 저장소 구현 확인 가능.
+	•	https://github.com/git/git
+	•	object-file.c, sha1_file.c 같은 파일에서 실제 object 처리 코드 확인 가능.
+	•	C 기반이지만 commit/tree/blob/tag 저장 구조 이해에 직접적 도움.
+
+⸻
+
+2️⃣ 전공/전문서 및 교재
+	1.	《Version Control with Git》 (O’Reilly, 2nd Edition)
+	•	Chapter 12~13에서 Git object 구조 심층 설명.
+	•	Git이 단순 VCS가 아닌 DAG(Directed Acyclic Graph)를 형성하는 원리까지 다룸.
+	2.	《Git Internals》 (Scott Chacon, PDF)
+	•	Git 내부 object를 가장 체계적으로 설명한 책.
+	•	Git 공식 Book의 내부 구조 파트의 기반 자료.
+	•	PDF: https://github.com/pluralsight/git-internals-pdf
+	3.	대학 전공 자료
+	•	소프트웨어 형상관리 / 분산버전관리 수업에서 Git을 DAG + Key-Value Store 관점으로 다룸.
+	•	예시: MIT 6.831 (User Interface Design) Git 내부 구조 강의자료
+https://ocw.mit.edu → Git 검색
+
+⸻
+
+3️⃣ 실습 중심 학습 추천
+	•	git init → echo "test" > a.txt → git add a.txt → .git/objects 내부 확인
+	•	git cat-file -p <hash> 로 blob / tree / commit 직접 확인
+	•	git cat-file -t <hash> 로 object type 학습
+	•	SHA1/2 해시와 zlib 압축 구조를 직접 확인하며 Git object store = content-addressable filesystem 개념 이해
+
+⸻
+
+4️⃣ 추천 학습 경로
+	1.	Pro Git 공식 문서에서 Git Internals 챕터 정독
+	2.	git cat-file / git hash-object 명령어로 실습
+	3.	O’Reilly 책으로 object storage → DAG 구조 심화
+	4.	필요 시 Git 소스 코드 레벨 확인 (object-file.c 중심)
+```
+- 이어서 chatGPT의 로드맵 추천
+```
+Git Object 구조 전공 스타일 학습 로드맵
+
+0️⃣ 학습 목표
+	•	Git을 단순 VCS가 아닌 Content-addressable filesystem + DAG 로 이해
+	•	Blob, Tree, Commit, Tag object 구조와 저장 방식 습득
+	•	.git/objects 내부 구조 및 packfile 최적화까지 학습
+
+⸻
+
+1️⃣ Git Object Storage 기초
+
+1. Key 개념
+	•	Git은 파일을 SHA-1/2 기반 Key-Value Store로 관리
+	•	Object 종류: blob, tree, commit, tag
+	•	.git/objects/ = Git object DB (loose object 저장소)
+
+2. 학습 흐름
+	1.	blob
+	•	파일 내용 자체를 저장
+	•	git hash-object 로 직접 생성 가능
+
+echo "Hello" | git hash-object --stdin -w
+git cat-file -p <hash>
+
+
+	2.	tree
+	•	디렉토리 구조를 저장
+	•	blob + 다른 tree reference 포함
+	•	git cat-file -p <tree_hash> 로 구조 확인
+	3.	commit
+	•	tree + parent commit hash + metadata(author, message) 저장
+	•	DAG(Directed Acyclic Graph) 형성
+	•	git cat-file -p <commit_hash> 확인
+	4.	tag
+	•	commit 혹은 object에 대한 참조 + 메타데이터 저장
+	•	lightweight tag는 ref, annotated tag는 object
+
+📖 참고 문서
+	•	Pro Git 2판: Git Internals: Objects
+	•	명령어: git-hash-object, git-cat-file
+
+⸻
+
+2️⃣ Git DAG(Commit Graph) 이해
+
+1. Key 개념
+	•	Commit object는 Tree + Parent Commit Hash를 포함
+	•	Git의 브랜치는 단순히 commit hash를 가리키는 ref
+	•	Merge = 여러 부모 commit을 갖는 DAG 구조 형성
+
+2. 실습
+
+git init
+echo "a" > a.txt
+git add a.txt
+git commit -m "first commit"
+
+# commit 구조 확인
+git log --oneline --graph
+git cat-file -p <commit_hash>
+
+📖 참고 문서
+	•	Pro Git: Plumbing and Porcelain
+	•	《Version Control with Git》 Ch.12
+
+⸻
+
+3️⃣ Object 압축 및 최적화 (Packfile)
+
+1. Key 개념
+	•	Loose object → packfile로 압축 저장
+	•	delta compression으로 유사 파일 공간 절약
+	•	.git/objects/pack/ 내부 구조 확인 가능
+
+2. 실습
+
+git gc            # loose → packfile
+ls .git/objects/pack
+git verify-pack -v .git/objects/pack/*.idx
+
+3. 심화 이해
+	•	packfile + index 파일 구조
+	•	delta chain 기반 공간 최적화
+
+📖 참고 문서
+	•	Git Internals: Packfiles
+	•	Git 소스코드: packfile.c, sha1_file.c
+
+⸻
+
+4️⃣ 심화: Git 소스코드 레벨
+	•	object 처리: object-file.c, sha1_file.c
+	•	packfile 처리: packfile.c
+	•	학습 난이도 높지만, 전공 심화에 도움
+
+📖 참고
+	•	GitHub: https://github.com/git/git
+
+⸻
+
+🔹 추천 학습 순서 요약
+	1.	Pro Git 공식 문서에서 object 구조 정독
+	2.	git hash-object + git cat-file 실습으로 blob/tree/commit 확인
+	3.	DAG와 branch/ref 구조 이해 → commit graph 실습
+	4.	packfile 압축 구조 학습 → git gc & verify-pack 실습
+	5.	필요 시 Git 소스코드 레벨 분석으로 심화
+```
+- [학습정리](https://gist.github.com/yunsaeng/7895349f3a86e751aec3fe64f7ce5757)
+
 ### **J110\_박서현**
 
 - 선택한 퀘스트 : 3번 작성된 코드의 테스트 케이스 작성에 AI 활용
@@ -88,6 +256,14 @@ Week1의 2번 미션을 보고 어떻게 README파일을 작성하는 게 가독
 
 - 선택한 퀘스트 : 4번 효율적으로 학습하기 위한 계획을 세우는 데 AI 활용하기
 - 선택 이유 : 미션을 수행하면서 항상 시간이 부족하다고 느껴지는데 AI로 학습/구현 시간을 정해두면 중간에 낭비하는 시간도 확인할 수 있고 더 효율적으로 미션을 수행할 수 있을 것 같아 선택하였습니다.
+
+- 미션 결과
+캠프 일정 시간표를 알려주고 시작과 끝나는 시간, 미션 난이도에 대한 정보를 알려주고 시간표를 작성해 excel 파일로 만들어달라는 프롬프트를 작성해 시간표를 만들어보았습니다. 엑셀파일을 만드는데에 오류가 많이 나서 여러 차례 시도를 했었는데 결국 엑셀파일을 받았지만 그러기보다 pdf로 받는게 훨씬 빠를 것 같습니다.
+- 프롬프트 결과 이미지
+<img width="2062" height="759" alt="Image" src="https://github.com/user-attachments/assets/8d0d4893-f883-4ee4-a716-1a9365c47c54" />
+프롬프트를 여러번 나누어 작성해서 공유하기 어려워 엑셀파일로 받은 결과 이미지만 가져왔습니다. 분명 저녁 7시까지 활동시간이지만 제가 자고싶은 시간을 입력하니 활동시간이 오후 5시까지로 줄었습니다... 10시간은 자고싶다고 했는데 제 욕심이었나봅니다....
+
+<br>
 
 ### **J139\_서준익**
 
