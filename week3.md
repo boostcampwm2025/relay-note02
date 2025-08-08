@@ -85,6 +85,50 @@ AI와 피어세션에서 내가 작성한 리드미/학습 내용을 AI에게 �
 <details>
 <summary><strong>J217: 4. AI에게 리드미 보여주고 피어 피드백 시간에 논의해볼 질문 2개 받기</strong></summary>
 
+벡터 관련 미션 때 진행자를 맡아서 피어세션 전에 개념과 관련된 객관식 질문을 뽑아가기로 했다. 그래서 여기에서 같이 논의하고 맞혀볼 문제를 AI를 활용해 만들어냈다.
+아래는 직접 피어세션 때 함께 논의한 문제이다.
+
+```js
+✅ 벡터 임베딩과 관련된 설명 중 틀린 것은?
+A. BERT 기반 모델은 문장의 문맥을 고려한 임베딩을 생성한다.
+B. Word2Vec은 문장의 전체 문맥을 반영하는 문장 임베딩을 만든다.
+C. Mean Pooling은 전체 토큰 벡터의 평균을 구해 문장 벡터를 만든다.
+D. [CLS] 토큰은 문장 전체의 의미를 대표하도록 학습된다.
+
+정답: B
+Word2Vec은 단어 수준 임베딩으로 문장 전체의 문맥을 반영하지 않는다.
+
+
+✅ 시멘틱 유사도 계산에서 의미 손실을 줄이기 위한 방법이 아닌 것은?
+A. TF-IDF 기반 벡터화를 사용하여 단어의 중요도를 반영한다.
+B. 사전학습된 언어 모델을 문장 임베딩에 활용한다.
+C. Max Pooling 또는 Attention Pooling을 고려한다.
+D. 문장 쌍에 대해 정규화를 적용하여 벡터 길이를 동일하게 한다.
+
+정답: A
+TF-IDF는 문맥을 고려하지 않는 단순 통계 기반 기법이라 시멘틱 손실을 줄이는 데 한계가 있다.
+
+
+✅ 유사도 기반 검색에서의 오답 패턴
+
+function findNearestNeighbor(query, db) {
+  return db.sort((a, b) => {
+    return cosineSimilarity(query, b.vector) - cosineSimilarity(query, a.vector);
+  })[0];
+}
+
+Q. 위 코드에서 발생할 수 있는 문제는 무엇인가?
+
+A. 정렬 기준이 오름차순이라 가장 먼 벡터를 반환함
+B. sort()가 stable하지 않아서 일관성 없음
+C. 유사도를 내림차순으로 정렬하므로 정상 작동함
+D. cosineSimilarity() 호출 횟수가 비효율적이다
+
+```
+
+
+
+
 </details>
 <details>
 <summary><strong>J234: 1. AI 재판관 - 짝과 설계 의견이 갈릴 때 AI에게 판단 요청하기</strong></summary>
